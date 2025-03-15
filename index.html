@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.122.0">
+    <title>Green Haven Memorial Park</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
+
+    <link rel="shortcut icon" href="assets/brand/green_haven_memorial_park_logo.ico" type="image/x-icon">
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+<link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
+
+<!-- Inside the <style> tag in the <head> -->
+  <style>
+    #cards-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+  
+    .card {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 16px;
+      background: #f9f9f9;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      width: 100%; /* Default to full width on small screens */
+    }
+  
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+  
+    .card p {
+      margin: 4px 0;
+      font-size: 14px;
+    }
+  
+    /* Ensure the cards are responsive on larger screens */
+    @media (min-width: 576px) {
+      .card {
+        width: calc(50% - 16px); /* 2 cards per row on medium screens */
+      }
+    }
+  
+    @media (min-width: 768px) {
+      .card {
+        width: calc(33.33% - 16px); /* 3 cards per row on large screens */
+      }
+    }
+  
+    @media (min-width: 992px) {
+      .card {
+        width: calc(25% - 16px); /* 4 cards per row on extra-large screens */
+      }
+    }
+  </style>
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+    </svg>
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-success py-2 dropdown-toggle d-flex align-items-center"
+              id="bd-theme"
+              type="button"
+              aria-expanded="false"
+              data-bs-toggle="dropdown"
+              aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+<main>
+  <div class="row">
+    <div class="col d-flex justify-content-center">
+      <img width="200" height="100" src="assets/brand/green_haven_memorial_park_logo.png" alt="">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col text-center">
+      <h3>Welcome to Green Haven Memorial Park</h3>    
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col mx-3 my-3">
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" id="search-bar" placeholder="Search by name or grave ID..." aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="cards-container row mx-3" id="cards-container"></div>
+</main>
+
+<!-- Map Modal -->
+<div class="modal fade" id="mapModal" tabindex="-1" aria-labelledby="mapModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="mapModalLabel">Directions to the Resting Place</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div id="map" style="height: 400px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Add Leaflet for OSM maps -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+<!-- Add OSRM for routing -->
+<script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+
+
+  <script>
+    //   const kioskLocation = [14.8713190, 120.9765669];
+
+    $(document).ready(function () {
+  // Predefined Kiosk location (latitude, longitude)
+  const kioskLocation = [14.8713190, 120.9765669];
+  // Function to fetch deceased details and add click event on cards
+  function fetchDeceased(query = "") {
+    $.ajax({
+      url: "fetch_deceased.php", // Backend PHP file
+      method: "GET",
+      data: { query: query },
+      success: function (data) {
+        const container = $("#cards-container");
+        container.empty(); // Clear existing cards
+
+        // Ensure data is parsed correctly
+        if (typeof data === "string") {
+          try {
+            data = JSON.parse(data);
+          } catch (e) {
+            console.error("Invalid JSON response");
+            container.append("<p>Error loading data.</p>");
+            return;
+          }
+        }
+
+        if (!Array.isArray(data)) {
+          container.append("<p>No valid data found.</p>");
+          return;
+        }
+
+        if (data.length === 0) {
+          container.append("<p>No results found.</p>");
+          return;
+        }
+
+        data.forEach((deceased) => {
+          const card = `
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 card" data-lat="${deceased.latitude_start}" data-lng="${deceased.longitude_start}">
+              <h3>${deceased.full_name}</h3>
+              <p><strong>Lot ID:</strong> ${deceased.lot_id}</p>
+              <p><strong>Birth Date:</strong> ${deceased.birth_date}</p>
+              <p><strong>Death Date:</strong> ${deceased.death_date}</p>
+            </div>
+          `;
+          container.append(card);
+        });
+
+        // Add click event to cards to open the map modal
+        $(".card").on("click", function () {
+          const lat = $(this).data("lat");
+          const lng = $(this).data("lng");
+          showMap(lat, lng);
+        });
+      },
+      error: function () {
+        alert("An error occurred while fetching the data.");
+      },
+    });
+  }
+
+  function showMap(graveLat, graveLng) {
+  // Construct the URL with query parameters
+  const kioskLocation = [14.8713190, 120.9765669]; // Example kiosk location, replace with your actual location
+  const mapUrl = `map.html?lat=${graveLat}&lng=${graveLng}&kiosk_lat=${kioskLocation[0]}&kiosk_lng=${kioskLocation[1]}`;
+  
+  // Redirect to the map page
+  window.location.href = mapUrl;
+}
+
+
+  // Fetch data on page load
+  fetchDeceased();
+
+  // Fetch data on search
+  $("#search-bar").on("input", function () {
+    const query = $(this).val();
+    fetchDeceased(query);
+  });
+});
+  </script>
+  
+  
+  <!-- <script>
+    // script.js
+    $(document).ready(function () {
+      
+        function fetchDeceased(query = "") {
+            $.ajax({
+                url: "fetch_deceased.php", // Backend PHP file
+                method: "GET",
+                data: { query: query },
+                success: function (data) {
+                    const container = $("#cards-container");
+                    container.empty(); // Clear existing cards
+
+                    // Ensure data is parsed correctly
+                    if (typeof data === "string") {
+                        try {
+                            data = JSON.parse(data);
+                        } catch (e) {
+                            console.error("Invalid JSON response");
+                            container.append("<p>Error loading data.</p>");
+                            return;
+                        }
+                    }
+
+                    if (!Array.isArray(data)) {
+                        container.append("<p>No valid data found.</p>");
+                        return;
+                    }
+
+                    if (data.length === 0) {
+                        container.append("<p>No results found.</p>");
+                        return;
+                    }
+
+                    data.forEach((deceased) => {
+                        const card = `
+                            <div class="card">
+                                <h3>${deceased.name}</h3>
+                                <p><strong>Grave ID:</strong> ${deceased.grave_id}</p>
+                                <p><strong>Birth Date:</strong> ${deceased.birth_date}</p>
+                                <p><strong>Death Date:</strong> ${deceased.death_date}</p>
+                                <p><strong>Location:</strong> (${deceased.latitude_start}, ${deceased.longitude_start})</p>
+                            </div>
+                        `;
+                        container.append(card);
+                    });
+                },
+                error: function () {
+                    alert("An error occurred while fetching the data.");
+                },
+            });
+        }
+
+        // Fetch data on page load
+        fetchDeceased();
+
+        // Fetch data on search
+        $("#search-bar").on("input", function () {
+            const query = $(this).val();
+            fetchDeceased(query);
+        });
+    });
+  </script> -->
+</body>
+</html>
