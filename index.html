@@ -285,7 +285,8 @@
       // Function to fetch deceased details and add click event on cards
       function fetchDeceased(query = "") {
         $.ajax({
-          url: "fetch_deceased.php", // Backend PHP file
+          // url: "fetch_deceased.php", // Backend PHP file
+          url: "https://group1.cs42a.com/ghmp-kiosk/fetch_deceased.php", // Backend PHP file
           method: "GET",
           data: { query: query },
           success: function (data) {
@@ -358,71 +359,6 @@
       });
     });
   </script>
-
-
-  <!-- <script>
-    // script.js
-    $(document).ready(function () {
-      
-        function fetchDeceased(query = "") {
-            $.ajax({
-                url: "fetch_deceased.php", // Backend PHP file
-                method: "GET",
-                data: { query: query },
-                success: function (data) {
-                    const container = $("#cards-container");
-                    container.empty(); // Clear existing cards
-
-                    // Ensure data is parsed correctly
-                    if (typeof data === "string") {
-                        try {
-                            data = JSON.parse(data);
-                        } catch (e) {
-                            console.error("Invalid JSON response");
-                            container.append("<p>Error loading data.</p>");
-                            return;
-                        }
-                    }
-
-                    if (!Array.isArray(data)) {
-                        container.append("<p>No valid data found.</p>");
-                        return;
-                    }
-
-                    if (data.length === 0) {
-                        container.append("<p>No results found.</p>");
-                        return;
-                    }
-
-                    data.forEach((deceased) => {
-                        const card = `
-                            <div class="card">
-                                <h3>${deceased.name}</h3>
-                                <p><strong>Grave ID:</strong> ${deceased.grave_id}</p>
-                                <p><strong>Birth Date:</strong> ${deceased.birth_date}</p>
-                                <p><strong>Death Date:</strong> ${deceased.death_date}</p>
-                                <p><strong>Location:</strong> (${deceased.latitude_start}, ${deceased.longitude_start})</p>
-                            </div>
-                        `;
-                        container.append(card);
-                    });
-                },
-                error: function () {
-                    alert("An error occurred while fetching the data.");
-                },
-            });
-        }
-
-        // Fetch data on page load
-        fetchDeceased();
-
-        // Fetch data on search
-        $("#search-bar").on("input", function () {
-            const query = $(this).val();
-            fetchDeceased(query);
-        });
-    });
-  </script> -->
 </body>
 
 </html>
