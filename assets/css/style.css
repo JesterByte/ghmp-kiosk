@@ -1,0 +1,182 @@
+:root {
+    --ghmp-primary: #2e7d32;
+    --ghmp-secondary: #689f38;
+    --ghmp-light: #f1f8e9;
+  }
+  
+  [data-bs-theme="dark"] {
+    --ghmp-primary: #81c784;
+    --ghmp-secondary: #a5d6a7;
+    --ghmp-light: #1b5e20;
+    --ghmp-dark-bg: #121212;
+    --ghmp-card-bg: #1e1e1e;
+  }
+  
+  body {
+    background-color: var(--bs-body-bg);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .search-input {
+    border-radius: 50px;
+    padding: 15px 25px;
+    font-size: 1.1rem;
+    border: 2px solid var(--ghmp-secondary);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+    transition: all 0.3s ease;
+  }
+  
+  .search-input:focus {
+    border-color: var(--ghmp-primary);
+    box-shadow: 0 4px 8px rgba(46, 125, 50, 0.2);
+  }
+  
+  .suggestions-container {
+    position: absolute;
+    width: calc(100% - 40px);
+    max-height: 300px;
+    overflow-y: auto;
+    background: var(--bs-body-bg);
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: none;
+    border: 1px solid var(--bs-border-color);
+  }
+  
+  .suggestion-item {
+    padding: 12px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--bs-border-color);
+    transition: all 0.2s;
+    color: var(--bs-body-color);
+  }
+  
+  .suggestion-item:hover {
+    background-color: var(--ghmp-light);
+  }
+  
+  .suggestion-item:last-child {
+    border-bottom: none;
+  }
+  
+  .logo-container {
+    margin: 30px 0;
+    text-align: center;
+    position: relative;
+  }
+  
+  .logo {
+    max-width: 250px;
+    height: auto;
+  }
+  
+  .welcome-text {
+    color: var(--ghmp-primary);
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  
+  .search-wrapper {
+    position: relative;
+    margin-bottom: 30px;
+  }
+  
+  .no-results {
+    text-align: center;
+    padding: 40px;
+    color: var(--bs-secondary-color);
+  }
+  
+  /* Loading spinner */
+  .spinner {
+    display: none;
+    width: 40px;
+    height: 40px;
+    margin: 20px auto;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: var(--ghmp-primary);
+    animation: spin 1s ease-in-out infinite;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  /* Theme toggle */
+  .theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 1000;
+  }
+  
+  .theme-toggle-btn {
+    background: none;
+    border: none;
+    color: var(--bs-body-color);
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+  
+  .theme-toggle-btn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  [data-bs-theme="dark"] .theme-toggle-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Card styling */
+  .card {
+    background-color: var(--bs-card-bg);
+    border-color: var(--bs-border-color);
+    transition: all 0.3s ease;
+  }
+  
+  .card-title {
+    color: var(--ghmp-primary);
+  }
+  
+  /* Modal styling for dark mode */
+  [data-bs-theme="dark"] .modal-content {
+    background-color: var(--ghmp-dark-bg);
+    border-color: #333;
+  }
+  
+  [data-bs-theme="dark"] .modal-header {
+    border-bottom-color: #333;
+  }
+  
+  [data-bs-theme="dark"] .modal-footer {
+    border-top-color: #333;
+  }
+  
+  /* Leaflet map adjustments for dark mode */
+  [data-bs-theme="dark"] .leaflet-tile {
+    filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7);
+  }
+  
+  [data-bs-theme="dark"] .leaflet-container {
+    background: #303030;
+  }
